@@ -1,0 +1,11 @@
+#deMiscat {
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	position: relative;
+}
+
+.header {
+	background-color: yellow;
+	font-weight: bold;
+}

@@ -1,0 +1,46 @@
+.navbar {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.container {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.descriptionMin {
+	background: rgb(188,10,10);
+  	height: 20rem;
+  	color: white;
+  	font-weight: 1000; 
+  	font-size: 2vw; 	
+  	padding: 2rem 5rem;
+}
+
+#pozaMare {
+	width: 50%;
+}
+
+#releaseInfo {
+background: rgb(89,89,89);
+color: white;
+font-weight: 200;
+text-align: center;
+padding-top: 1%;
+position: relative;
+height: 5rem;
+}
+
+.logo1, .logo2, .logo3 {
+  display: inline-block;
+  width: 30%;
+}
+
+.logo {
+  display: block;
+  font-weight: bold;
+  color: blue;
+}

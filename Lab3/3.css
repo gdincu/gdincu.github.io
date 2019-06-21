@@ -1,0 +1,85 @@
+@font-face {
+  font-family: fontulMeu;
+  src: url(Calligraffitti-Regular.ttf);
+}
+
+#op {
+	font-family: fontulMeu;
+}
+
+#op2 {
+	border-radius: 25px;
+	border: 1px solid black;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+	background: white;
+	width: 100%;
+}
+
+body {
+	background-image: url("https://vignette.wikia.nocookie.net/naruto/images/a/ab/Spiral_Background.png");
+}
+
+div {
+	background: green;
+}
+
+div:nth-of-type(1) {
+width: auto;
+}
+
+div:nth-of-type(2) {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+form {
+margin: 300px 10px auto 10px;
+background: white;
+}
+
+h1, h2 {
+	font-family: Arial;
+	font-size: 32px;
+	color: blue;
+}
+
+h1, h2, p {
+	text-align: center;
+	background: black;
+	
+}
+
+ol {
+	list-style-type: upper-roman;
+	background: yellow;
+}
+
+p {
+	font-family: Verdana;
+	color: red;
+}
+
+span {
+	background: white;
+	border: 1px solid black;
+	width: 25%;
+	height: auto;
+}
+
+ul {
+	list-style-type: square;
+	background: yellow;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,192 @@
+/*Setari Generale*/
+body {
+  margin: 0;
+  background: grey;
+}
+
+/*Ecran Mic*/
+@media screen and (max-width: 700px) {
+ ul {
+  margin: 0 30px;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  text-align: center;
+}
+li {
+  width: 100%;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 6px;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+}
+.descriptionMin {
+  background: rgb(188,10,10);
+
+  height: 15rem;
+
+  font-weight: bold;
+  font-size: 4vw;
+  color: white;
+  word-spacing:10px;
+  text-align: center;
+  padding: 0.5rem 6rem 2.5rem 6rem;
+}
+.descriptionMax {
+display: none;
+  }
+.photo {
+  background: white;
+  padding: 1px;
+  padding-bottom: 5rem;
+  object-fit: contain;
+}
+img {
+  width: 100%;
+}
+.releaseInfo {
+background: rgb(89,89,89);
+color: white;
+text-align: center;
+padding: 1% 10%;
+word-spacing: 10px;
+}
+a {
+  color: white;
+}
+#secondHalf {
+background: white;
+}
+.logo1, .logo2, .logo3 {
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.logo {
+  display: inline-block;
+  font-weight: bold;
+  background: rgb(242,242,242);
+  color: blue;
+}
+
+
+img[src^='logo'] {
+  width: 30%;
+  float: left;
+}
+
+img[src^='heart'] {
+  width: 30%;
+  float: left;
+}
+
+
+}
+
+/*Ecran Mare*/
+@media screen and (min-width: 701px) {
+ul {
+  list-style-type: none;
+  margin: 0 0 0 30px;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  border-right: 1px solid white;
+}
+.descriptionMin {
+  display: none;
+}
+.descriptionMax {
+  background: rgb(188,10,10);
+  padding: 5px 0px 5px 25px;
+
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  word-spacing: 20px;
+}
+.photo {
+  /*height: 300px;*/
+  padding-left: 20rem;
+  background: white;
+  padding-bottom: 10px;
+}
+#pozaMare {
+  width: 70%;
+}
+.releaseInfo {
+background: rgb(89,89,89);
+color: white;
+font-weight: 200;
+text-align: center;
+padding-top: 1%;
+position: relative;
+height: 2rem;
+}
+a[href^='release'] {
+  color: white;
+}
+#secondHalf {
+  background: white;
+  padding-top:1%;
+}
+
+#logoSet {
+  padding-left: 10%;
+}
+
+.logo1, .logo2, .logo3 {
+  display: inline-block;
+  width: 30%;
+}
+
+.logo {
+  display: block;
+  font-weight: bold;
+  color: blue;
+}
+
+hr {
+  margin: 2% 0 0 30px;
+  border-top: 2px solid rgb(55,55,55);
+}
+
+.logo3 {
+  display: inline-block;
+padding-left: 5%;
+}
+
+#logo3Max {
+  color: red;
+  display: block;
+}
+
+img [src^='heart'] {
+float: left;
+  width: 30%;
+}
+
+#p3Max {
+  float: right;
+  width: 70%;
+}
+
+
+
+}
