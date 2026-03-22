@@ -1,177 +1,210 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Curs TWCS</title>
-    <!-- Bootstrap core CSS -->
-<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.com/docs/4.3/examples/album/album.css" rel="stylesheet">
-  </head>
-	
-  <body>
-
-<main>
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Laboratoare TWCS</h1>
-      <p class="lead text-muted">http://www.cs.ubbcluj.ro/~sanda/html//current_Teaching/TWCS/</p>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Route Visualizer</title>
     
-<div class="container">
-
-      <div class="row">
-          <div class="col-xs-12 col-md-6 col-lg-4">
-          <div class="card mb-4 shadow-sm">
-           <img src="Thumbnails/Lab1.png" height="225" alt="Thumbnail">
-            <div class="card-body">
-              <p class="card-text">Lab1 - https://www.cs.ubbcluj.ro/~sanda/teaching/PULSE.php?2018-2019/TWCS&lab1</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="Lab1/Lab1.html" class="btn btn-sm btn-outline-secondary">View</a>				  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-md-6 col-lg-4">
-          <div class="card mb-4 shadow-sm">
-           <img src="Thumbnails/Lab2.png" height="225" alt="Thumbnail">
-             <div class="card-body">
-              <p class="card-text">Lab2 - https://www.cs.ubbcluj.ro/~sanda/teaching/PULSE.php?2018-2019/TWCS&lab2</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="Lab2/2.html" class="btn btn-sm btn-outline-secondary">View</a>          
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: sans-serif; }
+        #map { height: 100vh; width: 100%; background: #f0f0f0; }
+        #time-slider { cursor: none; } 
         
-	      <div class="col-xs-12 col-md-6 col-lg-4">
-          <div class="card mb-4 shadow-sm">
-            <img src="Thumbnails/Lab3.png" height="225" alt="Thumbnail">
-            <div class="card-body">
-              <p class="card-text">Lab3 - https://www.cs.ubbcluj.ro/~sanda/teaching/PULSE.php?2018-2019/TWCS&lab3</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="Lab3/3.html" class="btn btn-sm btn-outline-secondary">View</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        .leaflet-popup-content-wrapper { border-radius: 8px; }
+        .route-icon-marker { filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.4)); z-index: 1000 !important; }
 
-<div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-4">
-          <div class="card mb-4 shadow-sm">
-           <img src="Thumbnails/Lab4.png" height="225" alt="Thumbnail">
-            <div class="card-body">
-              <p class="card-text">Lab4 - https://www.cs.ubbcluj.ro/~sanda/teaching/PULSE.php?2018-2019/TWCS&lab4</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="Lab4/4.html" class="btn btn-sm btn-outline-secondary">View</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-	      <div class="col-xs-12 col-md-6 col-lg-4">
-          <div class="card mb-4 shadow-sm">
-           <img src="Thumbnails/Lab5.png" height="225" alt="Thumbnail">
-            <div class="card-body">
-              <p class="card-text">Lab5 - https://www.cs.ubbcluj.ro/~sanda/teaching/PULSE.php?2018-2019/TWCS&lab5</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="Lab5/5.html" class="btn btn-sm btn-outline-secondary">View</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-	      <div class="col-xs-12 col-md-6 col-lg-4">
-          <div class="card mb-4 shadow-sm">
-           <img src="Thumbnails/Lab6.png" height="225" alt="Thumbnail">
-            <div class="card-body">
-              <p class="card-text">Lab6 - https://www.cs.ubbcluj.ro/~sanda/teaching/PULSE.php?2018-2019/TWCS&lab6</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="Lab6/form.html" class="btn btn-sm btn-outline-secondary">View</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        #controls {
+            position: absolute; top: 10px; right: 10px; z-index: 2000; 
+            background: white; padding: 10px; border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3); width: 240px;
+        }
+        .btn-group { margin-top: 10px; display: flex; gap: 4px; }
+        button { flex: 1; padding: 3px 6px; cursor: pointer; border: 1px solid #ddd; border-radius: 3px; background: #f8f8f8; font-size: 11px; color: #444; }
+        button:hover { background: #efefef; }
+        #recording-status { color: #d00; font-size: 10px; font-weight: bold; display: none; margin-top: 4px; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div id="controls">
+    <div style="margin-bottom: 10px;">
+        <strong>Time: </strong><span id="time-display">12:00:00</span>
+    </div>
+    <input type="range" id="time-slider" min="0" max="86399" value="43200" style="width: 100%;">
+    <div style="display: flex; justify-content: space-between; font-size: 10px; color: #666; margin-top: 5px;">
+        <span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>23:59</span>
+    </div>
+    <div class="btn-group">
+        <button onclick="recorder.start()">🔴 Record</button>
+        <button onclick="recorder.stop()">⏹ Save</button>
+    </div>
+    <div id="recording-status">● RECORDING</div>
 </div>
 
- <div class="row">
-<div class="col-xs-12 col-md-6 col-lg-4">
-          <div class="card mb-4 shadow-sm">
-           <img src="Thumbnails/SimulareBootstrap.png" height="225" alt="Thumbnail">
-            <div class="card-body">
-              <p class="card-text">Simulare</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="Simulare/index.html" class="btn btn-sm btn-outline-secondary">View</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<div id="map"></div>
 
-        <div class="col-xs-12 col-md-6 col-lg-4">
-          <div class="card mb-4 shadow-sm">
-           <img src="Thumbnails/SimulareBootstrap.png" height="225" alt="Thumbnail">
-            <div class="card-body">
-              <p class="card-text">Examen</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="Examen/index.html" class="btn btn-sm btn-outline-secondary">View</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 
-</main>
+<script>
+    const map = L.map('map').setView([44.33, 23.73], 13);
+    
+    // Create specific panes to control layer order
+    map.createPane('routePane');
+    map.getPane('routePane').style.zIndex = 400;
+    map.createPane('stopPane');
+    map.getPane('stopPane').style.zIndex = 500; // Stops above routes
 
-<footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
-    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
-  </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const busMarkers = {};
+    let shapesData, schedules, colorData, stopsData;
+
+    // --- Define the Bus Stop Icon ---
+    const stopIcon = L.icon({
+        iconUrl: 'icons/bus-stop.png',
+        iconSize: [18, 18],     // Adjust size as needed
+        iconAnchor: [9, 9],     // Center the icon on the coordinate
+        popupAnchor: [0, -10]   // Where the popup appears relative to iconAnchor
+    });
+
+    Promise.all([
+        fetch('route_colors.json').then(res => res.json()),
+        fetch('gtfs_shapes.geojson').then(res => res.json()),
+        fetch('bus_schedules.json').then(res => res.json()),
+        fetch('gtfs_stops.geojson').then(res => res.json())
+    ]).then(([colors, shapes, scheds, stops]) => {
+        colorData = colors;
+        shapesData = shapes;
+        schedules = scheds;
+        stopsData = stops;
+
+        console.log("Stops Loaded:", stopsData.features.length);
+
+        // 1. Draw Static Routes
+        L.geoJSON(shapesData, {
+            pane: 'routePane',
+            style: (feature) => {
+                const sId = feature.properties.shape_id;
+                return { color: colorData[sId]?.color || "#3388ff", weight: 5, opacity: 0.6 };
+            },
+            onEachFeature: (feature, layer) => {
+                const sId = feature.properties.shape_id;
+                const routeName = colorData[sId]?.route_name || "Unknown";
+                layer.bindPopup(`<strong>Route: ${routeName}</strong><br>ID: ${sId}`);
+            }
+        }).addTo(map);
+
+        // 2. Draw Static Stops with custom PNG icon
+        L.geoJSON(stopsData, {
+            pane: 'stopPane',
+            pointToLayer: (feature, latlng) => {
+                return L.marker(latlng, { icon: stopIcon });
+            },
+            onEachFeature: (feature, layer) => {
+                layer.bindPopup(`
+                    <div style="line-height:1.4">
+                        <strong style="color:#0078ff">Bus Stop</strong><br>
+                        <b>Name:</b> ${feature.properties.stop_name}<br>
+                        <b>ID:</b> ${feature.properties.stop_id}
+                    </div>
+                `);
+            }
+        }).addTo(map);
+
+        updateBuses(); 
+        autoPlay.start(); 
+    }).catch(err => console.error("Error loading files:", err));
+
+    const slider = document.getElementById('time-slider');
+    const timeDisplay = document.getElementById('time-display');
+
+    function secondsToTime(s) { return new Date(s * 1000).toISOString().substr(11, 8); }
+    function timeToSeconds(t) { const [h, m, s] = t.split(':').map(Number); return h * 3600 + m * 60 + s; }
+
+    function updateBuses() {
+        if (!schedules || !shapesData) return;
+        const currentSeconds = parseInt(slider.value);
+        timeDisplay.innerText = secondsToTime(currentSeconds);
+
+        schedules.forEach(trip => {
+            const start = timeToSeconds(trip.start_time);
+            const end = timeToSeconds(trip.end_time);
+
+            if (currentSeconds >= start && currentSeconds <= end) {
+                const progress = (currentSeconds - start) / (end - start);
+                const shape = shapesData.features.find(f => f.properties.shape_id === trip.shape_id);
+                
+                if (shape) {
+                    const coords = shape.geometry.coordinates;
+                    const index = Math.floor(progress * (coords.length - 1));
+                    const pos = coords[index];
+
+                    if (!busMarkers[trip.trip_id]) {
+                        const icon = L.icon({
+                            iconUrl: `icons/route_icon_${trip.route_short_name.toLowerCase()}.png`,
+                            iconSize: [30, 30],
+                            iconAnchor: [15, 15],
+                            className: 'route-icon-marker'
+                        });
+                        busMarkers[trip.trip_id] = L.marker([pos[1], pos[0]], {icon: icon})
+                            .addTo(map)
+                            .bindTooltip(`Bus ${trip.route_short_name}`);
+                    } else {
+                        busMarkers[trip.trip_id].setLatLng([pos[1], pos[0]]);
+                    }
+                }
+            } else if (busMarkers[trip.trip_id]) {
+                map.removeLayer(busMarkers[trip.trip_id]);
+                delete busMarkers[trip.trip_id];
+            }
+        });
+    }
+
+    slider.addEventListener('input', updateBuses);
+
+    const autoPlay = {
+        active: false, speedMultiplier: 300, lastTimestamp: 0,
+        start() { this.active = true; this.lastTimestamp = performance.now(); requestAnimationFrame(this.step.bind(this)); },
+        stop() { this.active = false; },
+        step(timestamp) {
+            if (!this.active) return;
+            const delta = (timestamp - this.lastTimestamp) / 1000;
+            this.lastTimestamp = timestamp;
+            let val = parseFloat(slider.value) + (delta * this.speedMultiplier);
+            slider.value = val > 86399 ? 0 : val;
+            updateBuses();
+            requestAnimationFrame(this.step.bind(this));
+        }
+    };
+
+    const recorder = {
+        mediaRecorder: null, chunks: [],
+        async start() {
+            try {
+                const stream = await navigator.mediaDevices.getDisplayMedia({ video: { frameRate: 30 }, audio: false });
+                this.chunks = [];
+                this.mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
+                this.mediaRecorder.ondataavailable = e => this.chunks.push(e.data);
+                this.mediaRecorder.onstop = () => {
+                    const blob = new Blob(this.chunks, { type: 'video/webm' });
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = 'bus-visualization.webm';
+                    a.click();
+                    document.getElementById('recording-status').style.display = 'none';
+                    stream.getTracks().forEach(t => t.stop());
+                };
+                this.mediaRecorder.start();
+                document.getElementById('recording-status').style.display = 'block';
+            } catch (e) { console.error(e); }
+        },
+        stop() { if(this.mediaRecorder) this.mediaRecorder.stop(); }
+    };
+</script>
+
+</body>
 </html>
