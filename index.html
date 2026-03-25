@@ -7,34 +7,39 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <div id="controls">
     <div class="time-container">
-        <strong>Time: </strong><span id="time-display">12:00:00</span>
+        <label for="time-input"><strong>Time: </strong></label>
+        <input type="time" id="time-input" step="1">
     </div>
 
-    <input type="range" id="time-slider" min="0" max="86399" value="43200">
+    <input type="range" id="time-slider" min="0" max="86399">
+    
     <div class="slider-labels">
-        <span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>23:59</span>
+        <span>00:00</span>
+        <span>06:00</span>
+        <span>12:00</span>
+        <span>18:00</span>
+        <span>23:59</span>
     </div>
 
     <div class="btn-group">
         <button id="play-pause-btn" onclick="autoPlay.toggle()" title="Play/Pause">
             <i class="fas fa-pause"></i>
         </button>
-        <button onclick="recorder.start()" title="Start Recording">
-            <i class="fas fa-circle"></i> Record
-        </button>
-        <button onclick="recorder.stop()" title="Save Recording">
-            <i class="fas fa-save"></i> Save
-        </button>
+        <select id="speed-selector" onchange="autoPlay.setSpeed(this.value)" title="Playback Speed">
+            <option value="1">1x</option>
+            <option value="10">10x</option>
+            <option value="30" selected>30x</option>
+            <option value="60">60x</option>
+            <option value="120">120x</option>
+        </select>
     </div>
-    <div id="recording-status">● RECORDING</div>
-	
+    
     <div id="search-container">
         <div class="search-header" onclick="toggleSearch()">
             <span>🔍 SEARCH</span>
@@ -49,7 +54,10 @@
                 <input type="number" id="search-window" value="10" min="1" max="60" title="Window (mins)">
             </div>
             
-            <button class="btn-find" onclick="searchBusAtStop()">Find</button>
+            <div class="search-actions">
+                <button class="btn-find" onclick="searchBusAtStop()">Find</button>
+                <button class="btn-clear" onclick="clearSearch()">Clear</button>
+            </div>
             
             <div id="search-results"></div>
         </div>
@@ -60,14 +68,17 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 <script src="js/script.js"></script>
+
 <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('TransitFlow Cache Active!'))
-        .catch(err => console.log('Cache failed:', err));
-    });
-  }
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then(() => console.log('TransitFlow Cache Active!'))
+                .catch(err => console.error('Cache failed:', err));
+        });
+    }
 </script>
+
 </body>
 </html>
