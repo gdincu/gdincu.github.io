@@ -3,82 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TransitFlow</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css">
+    <title>My Portfolio | Web Applications</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hover-scale { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-scale:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+    </style>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800 font-sans antialiased">
 
-<div id="controls">
-    <div class="time-container">
-        <label for="time-input"><strong>Time: </strong></label>
-        <input type="time" id="time-input" step="1">
-    </div>
-
-    <input type="range" id="time-slider" min="0" max="86399" step="any">
-    
-    <div class="slider-labels">
-        <span>00:00</span>
-        <span>06:00</span>
-        <span>12:00</span>
-        <span>18:00</span>
-        <span>23:59</span>
-    </div>
-
-    <div class="btn-group">
-        <button id="play-pause-btn" onclick="autoPlay.toggle()" title="Play/Pause">
-            <i class="fas fa-pause"></i>
-        </button>
-        <select id="speed-selector" onchange="autoPlay.setSpeed(this.value)" title="Playback Speed">
-            <option value="30" selected>30x</option>
-            <option value="60">60x</option>
-            <option value="120">120x</option>
-        </select>
-		<button class="btn-clear" onclick="clearSearch()" title="Clear Search & Selection">
-        <i class="fas fa-trash-alt"></i>
-		</button>
-    </div>
-    
-    <div id="search-container">
-        <div class="search-header" onclick="toggleSearch()">
-            <span>🔍 SEARCH</span>
-            <i id="search-chevron" class="fas fa-chevron-down"></i>
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-900">
+                <i class="fa-solid fa-code text-indigo-600 mr-2"></i>App Showcase
+            </h1>
+            <a href="https://github.com/gdincu" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
+                <i class="fa-brands fa-github text-2xl"></i>
+            </a>
         </div>
+    </header>
 
-        <div id="search-content">
-            <input type="text" id="stop-search-input" placeholder="Stop name or ID">
-            
-            <div class="search-params">
-                <input type="time" id="search-time-input">
-                <input type="number" id="search-window" value="10" min="1" max="60" title="Window (mins)">
+    <!-- Projects Grid Section -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- TransitFlow Card -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
+                    <div class="h-48 bg-blue-50 flex items-center justify-center">
+                        <i class="fa-solid fa-bus text-5xl text-blue-500"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">TransitFlow</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">
+                            An interactive mapping tool to visualize transit schedules and routes. Watch vehicles move across the map in real-time or fast-forwarded playback.
+                        </p>
+                        <div class="flex space-x-3 mt-auto">
+                            <a href="https://gdincu.github.io/TransitFlow" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/TransitFlow" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TraceFlow Card -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
+                    <div class="h-48 bg-emerald-50 flex items-center justify-center">
+                        <i class="fa-solid fa-route text-5xl text-emerald-500"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">TraceFlow</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">
+                            A powerful GPX file visualizer. Drop in your track files to play back your runs, rides, or hikes, complete with live distance, speed, and elevation metrics.
+                        </p>
+                        <div class="flex space-x-3 mt-auto">
+                            <a href="https://gdincu.github.io/TraceFlow" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/TraceFlow" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BurnRate Card -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
+                    <div class="h-48 bg-orange-50 flex items-center justify-center">
+                        <i class="fa-solid fa-fire-flame-curved text-5xl text-orange-500"></i>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">BurnRate</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">
+                            A practical Fuel Target Calculator. Quickly and accurately estimate and manage your fuel consumption targets in a clean, user-friendly interface.
+                        </p>
+                        <div class="flex space-x-3 mt-auto">
+                            <a href="https://gdincu.github.io/BurnRate/" target="_blank" class="flex-1 bg-orange-600 hover:bg-orange-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/BurnRate" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            
-            <div class="search-actions">
-                <button class="btn-find" onclick="searchBusAtStop()">Find</button>
-            </div>
-            
-            <div id="search-results"></div>
         </div>
-    </div>
-</div>
+    </section>
 
-<div id="map"></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-<script src="js/script.js"></script>
-
-<script>
-    // Service Worker Registration
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js')
-                .then(() => console.log('TransitFlow Cache Active!'))
-                .catch(err => console.error('Cache failed:', err));
-        });
-    }
-</script>
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center mt-auto">
+        <p>&copy; 2026 App Showcase. Hosted on <a href="https://pages.github.com/" class="text-white hover:underline">GitHub Pages</a>.</p>
+    </footer>
 
 </body>
 </html>
