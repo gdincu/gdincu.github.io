@@ -3,231 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Web Applications</title>
+    <meta name="description" content="A minimal collection of web applications by gdincu.">
+    <title>Portfolio</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Inter for clean minimal typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        .hover-scale { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hover-scale:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+        body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        /* Flat Minimalism: no shadows, flat transitions only */
+        * { box-shadow: none !important; }
+        .flat-card { transition: border-color 0.15s ease; }
+        .flat-card:hover { border-color: #111111; }
+        .flat-btn-primary { transition: background-color 0.15s ease; }
+        .flat-btn-secondary { transition: border-color 0.15s ease, color 0.15s ease; }
+        .flat-btn-secondary:hover { border-color: #111111; color: #111111; }
+        a:focus-visible { outline: 2px solid #111111; outline-offset: 2px; }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans antialiased">
+<body class="bg-white text-neutral-900 antialiased min-h-screen flex flex-col">
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-gray-900">
-                <i class="fa-solid fa-code text-indigo-600 mr-2"></i>App Showcase
-            </h1>
-            <a href="https://github.com/gdincu" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors">
-                <i class="fa-brands fa-github text-2xl"></i>
+    <!-- Header -->
+    <header class="bg-white border-b border-neutral-200">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <span class="w-7 h-7 bg-neutral-900 text-white flex items-center justify-center">
+                    <i class="fa-solid fa-code text-xs"></i>
+                </span>
+                <span class="text-base font-semibold tracking-tight">Portfolio</span>
+            </a>
+            <a href="https://github.com/gdincu" target="_blank" class="text-sm text-neutral-500 hover:text-neutral-900 transition-colors flex items-center gap-2">
+                <i class="fa-brands fa-github text-lg"></i>
+                <span class="hidden sm:inline">gdincu</span>
             </a>
         </div>
     </header>
 
-    <!-- Projects Grid Section -->
-    <section class="py-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- TransitFlow Card -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
-                    <div class="h-48 bg-blue-50 flex items-center justify-center">
-                        <i class="fa-solid fa-bus text-5xl text-blue-500"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">TransitFlow</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">
-                            An interactive mapping tool to visualize transit schedules and routes. Watch vehicles move across the map in real-time or fast-forwarded playback.
-                        </p>
-                        <div class="flex space-x-3 mt-auto">
-                            <a href="https://gdincu.github.io/TransitFlow" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
-                                Live App
-                            </a>
-                            <a href="https://github.com/gdincu/TransitFlow" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TraceFlow Card -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
-                    <div class="h-48 bg-emerald-50 flex items-center justify-center">
-                        <i class="fa-solid fa-route text-5xl text-emerald-500"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">TraceFlow</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">
-                            A powerful GPX file visualizer. Drop in your track files to play back your runs, rides, or hikes, complete with live distance, speed, and elevation metrics.
-                        </p>
-                        <div class="flex space-x-3 mt-auto">
-                            <a href="https://gdincu.github.io/TraceFlow" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
-                                Live App
-                            </a>
-                            <a href="https://github.com/gdincu/TraceFlow" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BurnRate Card -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
-                    <div class="h-48 bg-orange-50 flex items-center justify-center">
-                        <i class="fa-solid fa-fire-flame-curved text-5xl text-orange-500"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">BurnRate</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">
-                            A practical Fuel Target Calculator. Quickly and accurately estimate and manage your fuel consumption targets in a clean, user-friendly interface.
-                        </p>
-                        <div class="flex space-x-3 mt-auto">
-                            <a href="https://gdincu.github.io/BurnRate/" target="_blank" class="flex-1 bg-orange-600 hover:bg-orange-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
-                                Live App
-                            </a>
-                            <a href="https://github.com/gdincu/BurnRate" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GPXLogger Card -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
-                    <div class="h-48 bg-indigo-50 flex items-center justify-center">
-                        <i class="fa-solid fa-location-crosshairs text-5xl text-indigo-600"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">GPXLogger</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">
-                            A client-side progressive web app utilizing your phone's GPS sensor and Wake Lock API to log routes and export them directly to standard GPX files.
-                        </p>
-                        <div class="flex space-x-3 mt-auto">
-                            <a href="https://gdincu.github.io/GPXLogger" target="_blank" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
-                                Live App
-                            </a>
-                            <a href="https://github.com/gdincu/GPXLogger" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- OpenBafang Card -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
-                    <div class="h-48 bg-teal-50 flex items-center justify-center">
-                        <i class="fa-solid fa-bicycle text-5xl text-teal-600"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">OpenBafang</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">
-                            A Progressive Web App designed to connect via Bluetooth to Bafang e-bike CAN-bus systems for real-time telemetry display, smart GPS route tracking, and custom CSV logging.
-                        </p>
-                        <div class="flex space-x-3 mt-auto">
-                            <a href="https://gdincu.github.io/OpenBafang/" target="_blank" class="flex-1 bg-teal-600 hover:bg-teal-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
-                                Live App
-                            </a>
-                            <a href="https://github.com/gdincu/OpenBafang" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GeoBench Card -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
-                    <div class="h-48 bg-purple-50 flex items-center justify-center">
-                        <i class="fa-solid fa-gauge-high text-5xl text-purple-600"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">GeoBench</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">
-                            A specialized benchmarking application for testing and evaluating geographic and mapping component performance.
-                        </p>
-                        <div class="flex space-x-3 mt-auto">
-                            <a href="https://gdincu.github.io/GeoBench" target="_blank" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
-                                Live App
-                            </a>
-                            <a href="https://github.com/gdincu/GeoBench" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CommuteRadar Card -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
-                    <div class="h-48 bg-sky-50 flex items-center justify-center">
-                        <i class="fa-solid fa-train-subway text-5xl text-sky-600"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">CommuteRadar</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">
-                            A focused tool for tracking your recurring commute without the overhead of a heavy map, keeping an eye on the routes you take every day.
-                        </p>
-                        <div class="flex space-x-3 mt-auto">
-                            <a href="https://gdincu.github.io/CommuteRadar" target="_blank" class="flex-1 bg-sky-600 hover:bg-sky-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
-                                Live App
-                            </a>
-                            <a href="https://github.com/gdincu/CommuteRadar" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- VoiceNotes Card -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
-                    <div class="h-48 bg-rose-50 flex items-center justify-center">
-                        <i class="fa-solid fa-microphone-lines text-5xl text-rose-500"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">VoiceNotes</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">
-                            A minimalist offline audio journal for recording, playing back, and managing voice memos, with everything stored locally on your device.
-                        </p>
-                        <div class="flex space-x-3 mt-auto">
-                            <a href="https://gdincu.github.io/VoiceNotes" target="_blank" class="flex-1 bg-rose-600 hover:bg-rose-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
-                                Live App
-                            </a>
-                            <a href="https://github.com/gdincu/VoiceNotes" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chores Card -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover-scale flex flex-col">
-                    <div class="h-48 bg-amber-50 flex items-center justify-center">
-                        <i class="fa-solid fa-list-check text-5xl text-amber-500"></i>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Chores</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">
-                            A local-first Kanban chore board with Todo, In Progress, and Done columns. Works fully offline and syncs peer-to-peer via WebRTC when you share the board link.
-                        </p>
-                        <div class="flex space-x-3 mt-auto">
-                            <a href="https://gdincu.github.io/Chores" target="_blank" class="flex-1 bg-amber-600 hover:bg-amber-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors">
-                                Live App
-                            </a>
-                            <a href="https://github.com/gdincu/Chores" target="_blank" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-github"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- Intro -->
+    <section class="border-b border-neutral-200">
+        <div class="max-w-6xl mx-auto px-6 py-14 md:py-20">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Portfolio</h2>
+            <p class="text-neutral-500 text-base leading-relaxed max-w-xl">
+                A collection of client-side tools for mapping, tracking, and everyday tasks.
+            </p>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center mt-auto">
-        <p>&copy; 2026 App Showcase. Hosted on <a href="https://pages.github.com/" class="text-white hover:underline">GitHub Pages</a>.</p>
+    <!-- Projects Grid -->
+    <main class="flex-grow">
+        <div class="max-w-6xl mx-auto px-6 py-12 md:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- TransitFlow -->
+                <article class="flat-card bg-white border border-neutral-200 flex flex-col">
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="w-14 h-14 bg-blue-50 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-bus text-2xl text-blue-600"></i>
+                            </span>
+                            <h3 class="text-2xl font-semibold tracking-tight">TransitFlow</h3>
+                        </div>
+                        <p class="text-base text-neutral-500 leading-relaxed mb-8 flex-grow">
+                            Interactive mapping tool to visualize transit schedules and routes. Watch vehicles move across the map in real-time or fast-forwarded playback.
+                        </p>
+                        <div class="flex gap-3 mt-auto pt-6 border-t border-neutral-100">
+                            <a href="https://gdincu.github.io/TransitFlow" target="_blank" class="flat-btn-primary flex-1 bg-neutral-900 hover:bg-black text-white text-center py-3 px-5 text-base font-medium">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/TransitFlow" target="_blank" class="flat-btn-secondary flex-1 border border-neutral-300 text-neutral-600 text-center py-3 px-5 text-base font-medium flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- TraceFlow -->
+                <article class="flat-card bg-white border border-neutral-200 flex flex-col">
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="w-14 h-14 bg-emerald-50 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-route text-2xl text-emerald-600"></i>
+                            </span>
+                            <h3 class="text-2xl font-semibold tracking-tight">TraceFlow</h3>
+                        </div>
+                        <p class="text-base text-neutral-500 leading-relaxed mb-8 flex-grow">
+                            GPX file visualizer. Drop in your track files to play back your runs, rides, or hikes, complete with live distance, speed, and elevation metrics.
+                        </p>
+                        <div class="flex gap-3 mt-auto pt-6 border-t border-neutral-100">
+                            <a href="https://gdincu.github.io/TraceFlow" target="_blank" class="flat-btn-primary flex-1 bg-neutral-900 hover:bg-black text-white text-center py-3 px-5 text-base font-medium">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/TraceFlow" target="_blank" class="flat-btn-secondary flex-1 border border-neutral-300 text-neutral-600 text-center py-3 px-5 text-base font-medium flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BurnRate -->
+                <article class="flat-card bg-white border border-neutral-200 flex flex-col">
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="w-14 h-14 bg-orange-50 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-fire-flame-curved text-2xl text-orange-500"></i>
+                            </span>
+                            <h3 class="text-2xl font-semibold tracking-tight">BurnRate</h3>
+                        </div>
+                        <p class="text-base text-neutral-500 leading-relaxed mb-8 flex-grow">
+                            Fuel Target Calculator. Quickly and accurately estimate and manage your fuel consumption targets in a clean, user-friendly interface.
+                        </p>
+                        <div class="flex gap-3 mt-auto pt-6 border-t border-neutral-100">
+                            <a href="https://gdincu.github.io/BurnRate/" target="_blank" class="flat-btn-primary flex-1 bg-neutral-900 hover:bg-black text-white text-center py-3 px-5 text-base font-medium">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/BurnRate" target="_blank" class="flat-btn-secondary flex-1 border border-neutral-300 text-neutral-600 text-center py-3 px-5 text-base font-medium flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- GPXLogger -->
+                <article class="flat-card bg-white border border-neutral-200 flex flex-col">
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="w-14 h-14 bg-indigo-50 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-crosshairs text-2xl text-indigo-600"></i>
+                            </span>
+                            <h3 class="text-2xl font-semibold tracking-tight">GPXLogger</h3>
+                        </div>
+                        <p class="text-base text-neutral-500 leading-relaxed mb-8 flex-grow">
+                            Log routes using your phone's GPS sensor. Export them directly to standard GPX files.
+                        </p>
+                        <div class="flex gap-3 mt-auto pt-6 border-t border-neutral-100">
+                            <a href="https://gdincu.github.io/GPXLogger" target="_blank" class="flat-btn-primary flex-1 bg-neutral-900 hover:bg-black text-white text-center py-3 px-5 text-base font-medium">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/GPXLogger" target="_blank" class="flat-btn-secondary flex-1 border border-neutral-300 text-neutral-600 text-center py-3 px-5 text-base font-medium flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- OpenBafang -->
+                <article class="flat-card bg-white border border-neutral-200 flex flex-col">
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="w-14 h-14 bg-teal-50 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-bicycle text-2xl text-teal-600"></i>
+                            </span>
+                            <h3 class="text-2xl font-semibold tracking-tight">OpenBafang</h3>
+                        </div>
+                        <p class="text-base text-neutral-500 leading-relaxed mb-8 flex-grow">
+                            Connect to Bafang e-bike CAN-bus systems for real-time telemetry, smart GPS route tracking, and custom GPX/CSV logging.
+                        </p>
+                        <div class="flex gap-3 mt-auto pt-6 border-t border-neutral-100">
+                            <a href="https://gdincu.github.io/OpenBafang/" target="_blank" class="flat-btn-primary flex-1 bg-neutral-900 hover:bg-black text-white text-center py-3 px-5 text-base font-medium">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/OpenBafang" target="_blank" class="flat-btn-secondary flex-1 border border-neutral-300 text-neutral-600 text-center py-3 px-5 text-base font-medium flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- GeoBench -->
+                <article class="flat-card bg-white border border-neutral-200 flex flex-col">
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="w-14 h-14 bg-purple-50 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-gauge-high text-2xl text-purple-600"></i>
+                            </span>
+                            <h3 class="text-2xl font-semibold tracking-tight">GeoBench</h3>
+                        </div>
+                        <p class="text-base text-neutral-500 leading-relaxed mb-8 flex-grow">
+                            Benchmarking the Performance of Geographic and Mapping Components.
+                        </p>
+                        <div class="flex gap-3 mt-auto pt-6 border-t border-neutral-100">
+                            <a href="https://gdincu.github.io/GeoBench" target="_blank" class="flat-btn-primary flex-1 bg-neutral-900 hover:bg-black text-white text-center py-3 px-5 text-base font-medium">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/GeoBench" target="_blank" class="flat-btn-secondary flex-1 border border-neutral-300 text-neutral-600 text-center py-3 px-5 text-base font-medium flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CommuteRadar -->
+                <article class="flat-card bg-white border border-neutral-200 flex flex-col">
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="w-14 h-14 bg-sky-50 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-train-subway text-2xl text-sky-600"></i>
+                            </span>
+                            <h3 class="text-2xl font-semibold tracking-tight">CommuteRadar</h3>
+                        </div>
+                        <p class="text-base text-neutral-500 leading-relaxed mb-8 flex-grow">
+                            Track recurring commutes.
+                        </p>
+                        <div class="flex gap-3 mt-auto pt-6 border-t border-neutral-100">
+                            <a href="https://gdincu.github.io/CommuteRadar" target="_blank" class="flat-btn-primary flex-1 bg-neutral-900 hover:bg-black text-white text-center py-3 px-5 text-base font-medium">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/CommuteRadar" target="_blank" class="flat-btn-secondary flex-1 border border-neutral-300 text-neutral-600 text-center py-3 px-5 text-base font-medium flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- VoiceNotes -->
+                <article class="flat-card bg-white border border-neutral-200 flex flex-col">
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="w-14 h-14 bg-rose-50 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-microphone-lines text-2xl text-rose-500"></i>
+                            </span>
+                            <h3 class="text-2xl font-semibold tracking-tight">VoiceNotes</h3>
+                        </div>
+                        <p class="text-base text-neutral-500 leading-relaxed mb-8 flex-grow">
+                            Audio journal for recording, playback, and managing voice memos - locally stored.
+                        </p>
+                        <div class="flex gap-3 mt-auto pt-6 border-t border-neutral-100">
+                            <a href="https://gdincu.github.io/VoiceNotes" target="_blank" class="flat-btn-primary flex-1 bg-neutral-900 hover:bg-black text-white text-center py-3 px-5 text-base font-medium">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/VoiceNotes" target="_blank" class="flat-btn-secondary flex-1 border border-neutral-300 text-neutral-600 text-center py-3 px-5 text-base font-medium flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Chores -->
+                <article class="flat-card bg-white border border-neutral-200 flex flex-col">
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="w-14 h-14 bg-amber-50 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-list-check text-2xl text-amber-500"></i>
+                            </span>
+                            <h3 class="text-2xl font-semibold tracking-tight">Chores</h3>
+                        </div>
+                        <p class="text-base text-neutral-500 leading-relaxed mb-8 flex-grow">
+                            Chores board app - works fully offline and syncs peer-to-peer on the same network.
+                        </p>
+                        <div class="flex gap-3 mt-auto pt-6 border-t border-neutral-100">
+                            <a href="https://gdincu.github.io/Chores" target="_blank" class="flat-btn-primary flex-1 bg-neutral-900 hover:bg-black text-white text-center py-3 px-5 text-base font-medium">
+                                Live App
+                            </a>
+                            <a href="https://github.com/gdincu/Chores" target="_blank" class="flat-btn-secondary flex-1 border border-neutral-300 text-neutral-600 text-center py-3 px-5 text-base font-medium flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-neutral-200">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p class="text-sm text-neutral-500">&copy; 2026 App Showcase</p>
+            <p class="text-sm text-neutral-500">Hosted on <a href="https://pages.github.com/" class="text-neutral-900 underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900">GitHub Pages</a></p>
+        </div>
     </footer>
 
 </body>
